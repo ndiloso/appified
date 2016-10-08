@@ -1,0 +1,42 @@
+<template name="teachDescription">
+
+	
+	{{#if currentUser}}
+	<h3>start teaching</h3>
+	{{else}}
+
+	<div class="container">
+		<div class="row">
+		<div class="text-center">
+<h3>Welcome! You are required to sign-up before you teach.</h3>
+</div>
+			<div class="col-md-4 col-md-offset-4">
+			
+
+
+
+			
+	{{#autoForm id="registerTeacher" schema=AccountSchema}}
+				    {{> afQuickField name="email"}}
+				    {{> afQuickField name="password" type="password"}}
+				    {{> afQuickField name="firstName"}}
+				    {{> afQuickField name="lastName"}}
+				    {{> afQuickField name="birthday"}}
+				    {{> afQuickField name="location"}}
+				     {{> afQuickField name="student_id"}}
+				     {{> afQuickField name="phone"}}
+				     {{> afQuickField name="gpa"}}
+				      {{> afQuickField name="level"}}
+				      {{> afQuickField name="department"}}
+			        <div class="form-group">
+			                <button type="submit" class="btn btn-primary">Sign Up</button>
+			        </div>
+			        {{/autoForm}}
+
+				
+				
+		</div>	
+	</div>
+	</div>
+	{{/if}}
+</template>

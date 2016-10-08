@@ -1,0 +1,79 @@
+<template name='teacherHome'>
+	
+<div class="container">
+	<div class="row">
+
+	<div class ="col-md-6">
+
+<div class="text-center">	
+<h3>Welcome to teachers home!!!</h3>
+</div>
+<p class="text-center">
+ These are the list of courses you have created.
+</p>
+
+<table class="table table-striped">
+	<tr>
+		<th>Course Title</th>
+        <th>Date Created</th>
+         <th></th>
+	</tr>
+   {{#each posts}}
+    <tr>
+    <td>{{name}}</td>
+    <td>{{courseDate}}</td>
+    <td><a href="#" class="btn btn-default btn-tiny">Edit</a><button class="btn btn-default delete_course">Delete</button></td>
+</tr>
+  {{else}}
+  <tr>
+  	<td>There are no courses</td>
+  </tr>
+  {{/each}} 
+</table>
+
+</div>
+
+
+<div class="col-lg-6 ">
+
+<h2>Create Course</h2>
+<form class="add_course_form" enctype="multipart/form-data">
+<div class="form-group">
+<label>Name</label>
+<input type="text" class="form-control" id="name" name="name" placeholder="Course Name">
+</div>
+<div class="form-group">
+	<label>Course Date</label>
+	DatePicker Here
+</div>
+<div class="form-group">
+<label>Client</label>
+<input type="text" class="form-control" id="name" name="Client name" placeholder="Client Name">
+</div>
+
+<div class="form-group">
+<label>Type</label>
+<input type="text" class="form-control" id="type" name="type" placeholder="Course type">
+</div>
+
+<div class="form-group">
+<label>Description</label>
+<textarea class="form-control" id="description" name="description" placeholder="Course type"></textarea> 
+</div>
+
+<div class="form-group">
+<label>Teachers Image</label>
+<input type="file"  id="teacherimage" name="teacherimage">
+</div>
+
+<button type="submit" class="btn btn-primary">Submit</button>
+<a href="/" class="btn btn-default">Go Back</a>
+
+</form>
+
+</div>
+
+	
+</div>
+</div>
+</template>

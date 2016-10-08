@@ -1,0 +1,26 @@
+<template name="UserProfileEdit">
+      <div class="container">
+      <div class="row">
+      <div class="col-md-4">
+        {{#autoForm id="UserProfileEdit" collection="Meteor.users"  doc=currentUser type="update"}}
+                {{> afQuickField name="profile.firstName"}}
+                {{> afQuickField name="profile.lastName"}}
+                {{> afQuickField name="profile.birthday"}}
+                {{> afQuickField name="profile.student_id"}}
+                {{> afQuickField name="profile.phone"}}
+                {{> afQuickField name="profile.gpa"}}
+                {{> afQuickField name="profile.level"}}
+                {{> afQuickField name="profile.department"}}
+
+        
+                {{#unless autoSaveMode}}
+                <div class="form-group">
+                        <button type="submit" class="btn btn-primary" disabled="{{disableButtons}}">Submit</button>
+                </div>
+                {{/unless}}
+        {{/autoForm}}
+        
+       </div> 
+   </div>
+</div>
+</template>
